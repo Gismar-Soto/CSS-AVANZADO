@@ -44,8 +44,8 @@ body {
 }
 
 .header .bi {
-  font-size: 25px; /* Tamaño del icono */
-  margin-right: 10px; /* Espacio */
+  font-size: 25px;
+  margin-right: 10px;
 }
 
 .menu {
@@ -56,7 +56,7 @@ body {
 }
 
 .menu h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
@@ -116,25 +116,39 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
 }
 
 .img-container img {
-  width: 100%;
-  height: auto; /* altura automática*/
+  width: 90%;
+  height: auto;
   object-fit: cover;
+  max-height: 290px;
+}
+
+.img-container h2,
+.img-container h4 {
+  margin: 0.5rem 0;
 }
 
 .img-container h2 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
 }
 
 .img-container h4 {
   font-size: 1rem;
-  color: #000000;
-  margin: 0.5rem 0;
+}
+
+.img-container .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80px;
 }
 
 .img-container button {
@@ -149,7 +163,7 @@ body {
 
 .img-container button:hover {
   background-color: #a4aa14;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   transition: all 0.4s;
 }
 
@@ -166,10 +180,11 @@ body {
 }
 
 .footer .bi {
-  font-size: 50px; /* Tamaño del icono */
-  margin-right: 10px; /* Espacio */
+  font-size: 50px;
+  margin-right: 10px;
 }
 
+/* Estilos responsivos */
 @media (max-width: 1024px) {
   .main {
     grid-template-columns: repeat(3, 1fr);
@@ -185,6 +200,9 @@ body {
       "footer";
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+  }
+  .menu {
+    text-align: center;
   }
   .main {
     grid-template-columns: 1fr;
@@ -208,6 +226,12 @@ body {
   }
   .search-bar button {
     padding: 0.3rem;
+  }
+  .img-container {
+    padding: 0.5rem;
+  }
+  .img-container img {
+    max-height: 20px;
   }
   .img-container h2 {
     font-size: 1rem;
