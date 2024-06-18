@@ -7,5 +7,5 @@
 
 2-Desafío Layout de e-commerce con Grid (15/06/2023)
 
-![image](https://github.com/Gismar-Soto/CSS-AVANZADO/assets/170896819/8fc5bf86-6b09-48b8-ba81-77b4bcf72544)
+![image](https://github.com/Gismar-Soto/CSS-AVANZADO/assets/170896819/cda2eb8a-89b7-461a-9757-ecd4db986729)
 
