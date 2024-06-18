@@ -123,9 +123,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  border: 1px dotted #000; 
-  max-width: 330px; 
-  flex: 1 1 calc(25% - 2rem); 
+  border: 1px dotted #000;
+  max-width: 200px; 
+  flex: 1 1 calc(20% - 2rem);
 }
 
 .card img {
@@ -172,7 +172,9 @@ body {
   border: none;
   cursor: pointer;
   margin-bottom: 1rem;
-  
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .card .add-to-cart:hover {
@@ -282,6 +284,3 @@ body {
     font-size: 1rem;
   }
 }
-
-
-
