@@ -238,7 +238,7 @@
 
 /*----------- MEDIA QUERY PG------------*/
 
-@media (min-width: 796px) {
+@media (min-width: 768px) {
   .container {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
