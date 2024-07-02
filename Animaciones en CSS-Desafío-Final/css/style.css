@@ -1,0 +1,544 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #b97d7b;
+  --secondary-color: #f5f5f5;
+  --black: #1d1f21;
+  --gray: #444648;
+  --white: #f5f5f5;
+  --highlight-color: #8c5b59; /* Color para la interacción */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "header"
+    "content"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px auto 1fr 80px;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+/* Menú de Navegación */
+.nav-menu ul li a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a:focus {
+  background-color: var(--highlight-color);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.navbar, .footer {
+  background-color: var(--primary-color);
+  align-content: center;
+  padding: 16px;
+}
+
+.navbar .container, .footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 50px;
+  transition: transform 1s;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.header .container {
+  display: grid;
+  padding: 24px 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  height: 500px;
+}
+
+.header section {
+  display: grid;
+  align-content: center;
+  text-align: center;
+  padding: 32px;
+  font-size: 24px;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+.header section p {
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 20px;
+}
+
+.header .primary {
+  font-size: 32px;
+  grid-column: span 2;
+  grid-row: span 2;
+  text-align: left;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/Img/img4.png");
+}
+
+.header .primary p {
+  font-size: 24px;
+}
+
+.header .secondary:nth-child(2) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/Img/img6png.png");
+}
+
+.header .secondary:nth-child(3) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/Img/img3.png");
+}
+
+main {
+  grid-area: main;
+}
+
+.container:has(main) {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas: "aside main";
+  gap: 16px;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.product-card {
+  background-color: var(--gray);
+  transition: all 0.3s;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card:hover img {
+  filter: grayscale(1);
+  transform: scale(1.1);
+}
+
+.product-card img {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.product-card div {
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.product-card .price {
+  color: var(--primary-color);
+  font-weight: bold;
+  justify-self: start;
+}
+
+.filters {
+  grid-area: aside;
+  max-width: 900px;
+  display: grid;
+  gap: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.filters:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filters section {
+  display: grid;
+  gap: 16px;
+}
+
+.filters section h3 {
+  background-size: cover;
+  background-position: center;
+  height: 80px;
+  align-content: center;
+  border-radius: 16px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+}
+
+.filters section :nth-child(1) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/Img/img5.png");
+}
+
+.filters section :nth-child(2) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/Img/img5.png");
+}
+
+.filters section :nth-child(3) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/Img/img5.png");
+}
+
+main,
+.filters {
+  align-content: start;
+}
+
+button {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: var(--black);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transition: background-color 0.3s;
+}
+
+button.primary:hover {
+  background-color: #8c5b59;
+}
+
+button.secondary {
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+}
+
+button.third {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  color: var(--primary-color);
+  border-radius: 50%;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.social-icon i {
+  font-size: 20px;
+}
+
+.nav-menu ul li button {
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.nav-menu ul li button:hover {
+  transform: scale(1.1);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 1s;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu-toggle:checked + .menu-icon + .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .nav-menu ul {
+    display: none;
+  }
+
+  .header .container {
+    grid-template-columns: 1fr;
+  }
+
+  .header .primary {
+    grid-column: 1;
+  }
+
+  .header .secondary:nth-child(2),
+  .header .secondary:nth-child(3) {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .header .primary p,
+  .header .secondary:nth-child(2) p,
+  .header .secondary:nth-child(3) p {
+    font-size: 10px;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    width: 90%;
+    max-width: 300px;
+    background-color: var(--gray);
+    color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-card img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .product-card .price {
+    justify-self: center;
+  }
+
+  .filters {
+    display: none;
+  }
+
+  .footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 9px solid var(--white);
+  }
+}
+
+@media (max-width: 600px) {
+  .container:has(main) {
+    grid-template-columns: 1fr;
+  }
+
+  .header .container {
+    grid-template-columns: 1fr;
+  }
+
+  .header .primary,
+  .header .secondary:nth-child(2),
+  .header .secondary:nth-child(3) {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .header .primary p,
+  .header .secondary:nth-child(2) p,
+  .header .secondary:nth-child(3) p {
+    font-size: 10px;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 300px;
+    background-color: var(--gray);
+    color: var (--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-card img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .product-card .price {
+    justify-self: center;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .filters {
+    display: none;
+  }
+
+  .footer {
+    padding: 16px;
+    text-align: center;
+    border-top: 4px solid var(--white);
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content .textbox {
+    order: 2;
+    margin-top: 50px;
+  }
+
+  .content .imgbox {
+    order: 1;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+
+  .thumb {
+    position: static;
+    margin-top: 30px;
+  }
+
+  .sci {
+    position: static;
+    transform: none;
+    display: flex;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "navbar filter"
+      "navbar main"
+      "footer main";
+  }
+}
+
+.product-section {
+  flex-direction: column;
+  padding: 50px;
+}
+
+.gallery {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.grid-container {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.thumb li {
+  margin: 0 10px;
+}
+
+.filters {
+  padding: 20px;
+}
+
+.filter-options {
+  flex-direction: column;
+}
+
+h2.color {
+  text-align: center;
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 3rem;
+}
+
+#filtros {
+  margin-top: 20px;
+}
+
+#galeria {
+  margin-top: 20px;
+  font-size: 2rem;
+}
